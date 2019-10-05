@@ -35,11 +35,11 @@ Things you may want to cover:
 |name|string|null: false, unique: true, index: true|
 |email|integer|null: false, unique: true|
 |pass|integer|null: false|
-|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :tweets
 - has_many :groups, through: groups_users
+- has_many :groups_users
 
 
 
@@ -48,12 +48,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|group|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :tweets
 - has_many :users, through: groups_users
+- has_many :groups_users
 
 
 
@@ -63,6 +63,7 @@ Things you may want to cover:
 |------|----|-------|
 |id|integer|null: false|
 |tweet|text|null: false|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
