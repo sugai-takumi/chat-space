@@ -39,6 +39,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :tweets
+- has_many :groups, through: groups_users
 
 
 
@@ -52,6 +53,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :tweets
+- has_many :users, through: groups_users
 
 
 
