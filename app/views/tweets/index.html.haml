@@ -1,0 +1,58 @@
+.wrapper
+
+  = render 'shared/side_bar'
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
+    .tweets
+      .tweet
+        .upper-tweet
+          .upper-tweet__user-name
+            メンバー
+          .upper-tweet__date
+            2019/10/07
+        .lower-meesage
+          .lower-tweet__content
+            ツイート
+      .tweet
+        .upper-tweet
+          .upper-tweet__user-name
+            メンバー
+          .upper-tweet__date
+            2019/10/07
+        .lower-meesage
+          .lower-tweet__content
+            ツイート
+      .tweet
+        .upper-tweet
+          .upper-tweet__user-name
+            メンバー
+          .upper-tweet__date
+            2019/10/07
+        .lower-meesage
+          .lower-tweet__content
+            ツイート
+    .form
+      %form#new_tweet{"accept-charset": :"UTF-8", action: :"", enctype: :"multipart/form-data", method: :"post"}
+        %input{name: :"utf8", type: :"hidden", value: :"✓"}/
+        %input{name: :"authenticity_token", type: :"hidden", value: :""}/
+        %input.form__tweet{name: :"tweet[content]", placeholder: :"  type a tweet", type: :"text"}/
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
