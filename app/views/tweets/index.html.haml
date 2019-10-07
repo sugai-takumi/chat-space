@@ -47,10 +47,10 @@
           .lower-tweet__content
             ツイート
     .form
-      %form#new_tweet{"accept-charset" => "UTF-8", :action => "", :enctype => "multipart/form-data", :method => "post"}
-        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-        %input{:name => "authenticity_token", :type => "hidden", :value => ""}/
-        %input.form__tweet{:name => "tweet[content]", :placeholder => "  type a tweet", :type => "text"}/
+      %form#new_tweet{"accept-charset": :"UTF-8", action: :"", enctype: :"multipart/form-data", method: :"post"}
+        %input{name: :"utf8", type: :"hidden", value: :"✓"}/
+        %input{name: :"authenticity_token", type: :"hidden", value: :""}/
+        %input.form__tweet{name: :"tweet[content]", placeholder: :"  type a tweet", type: :"text"}/
         .form__mask
           %label.form__mask__image
             = fa_icon 'picture-o', class: 'icon'
