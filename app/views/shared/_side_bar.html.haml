@@ -15,5 +15,5 @@
         = link_to group_tweets_path(group) do
           .group__name
             = group.name
-          .group__message
-            メッセージはまだありません。
+          .group__tweet
+            = group.show_last_tweet

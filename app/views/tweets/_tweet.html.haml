@@ -1,0 +1,11 @@
+.tweet
+  .upper-tweet
+    .upper-tweet__user-name
+      = tweet.user.name
+    .upper-tweet__date
+      = tweet.created_at.strftime("%Y/%m/%d %H:%M")
+  .lower-tweet
+    - if tweet.content.present?
+      %p.lower-tweet__content
+        = tweet.content
+    = image_tag tweet.image.url, class: 'lower-tweet__image' if tweet.image.present?
