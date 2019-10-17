@@ -1,6 +1,6 @@
 $(function(){ 
   function buildHTML(tweet){
-   if ( tweet.image ) {
+    addImage = (tweet.image) ? `<img src="${tweet.image.url}" class="lower-tweet__image">` : "";
      var html =
       `<div class="tweet" data-tweet-id=${tweet.id}>
          <div class="upper-tweet">
@@ -19,25 +19,6 @@ $(function(){
          <img src=${tweet.image} >
        </div>`
      return html;
-   } else {
-     var html =
-      `<div class="tweet" data-tweet-id=${tweet.id}>
-         <div class="upper-tweet">
-           <div class="upper-tweet__user-name">
-             ${tweet.user_name}
-           </div>
-           <div class="upper-tweet__date">
-             ${tweet.date}
-           </div>
-         </div>
-         <div class="lower-tweet">
-           <p class="lower-tweet__content">
-             ${tweet.content}
-           </p>
-         </div>
-       </div>`
-     return html;
-   };
 }
 $('#new_tweet').on('submit', function(e){
   e.preventDefault();
