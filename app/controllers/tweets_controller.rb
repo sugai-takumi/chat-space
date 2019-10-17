@@ -9,7 +9,10 @@ class TweetsController < ApplicationController
   def create
     @tweet = @group.tweets.new(tweet_params)
     if @tweet.save
-      redirect_to group_tweets_path(@group), notice: 'メッセージが送信されました'
+      respond_to do |format|
+        format.html { redirect_to group_tweets_path(@group), notice: 'メッセージが送信されました' }
+        format.json
+      end
     else
       @tweets = @group.tweets.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
