@@ -4,6 +4,7 @@ class TweetsController < ApplicationController
   def index
     @tweet = Tweet.new
     @tweets = @group.tweets.includes(:user)
+    @members = group_member(@group)
   end
 
   def create
@@ -28,5 +29,13 @@ class TweetsController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
+  end
+
+  def group_member(group)
+    members = []
+    group.users.each do |member|
+      members << member.name
+    end
+    members = members.join(" ")
   end
 end
