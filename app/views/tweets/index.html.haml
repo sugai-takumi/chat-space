@@ -15,7 +15,7 @@
 
     .form
       = form_for [@group, @tweet] do |f|
-        = f.text_field :content, class: 'form__tweet', placeholder: 'type a tweet', id: "new_tweet"
+        = f.text_field :content, class: 'form__tweet', placeholder: 'type a tweet'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
