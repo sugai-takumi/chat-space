@@ -8,7 +8,7 @@
         %ul.left-header__members
           = "Members: #{@members}"
       .right-header
-        = link_to 'Edit', edit_group_path(current_user), class: 'right-header__button'
+        = link_to 'Edit', edit_group_path(@group), class: 'right-header__button'
 
     .tweets
       = render @tweets
